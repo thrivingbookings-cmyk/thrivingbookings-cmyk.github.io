@@ -1,0 +1,161 @@
+/* ============================================================
+   THRIVING BOOKING AGENCY — style.css
+   Root folder: C:\Users\Griff Concepts\Desktop\Website\
+   ============================================================
+
+   IMPORTANT — FONT FILE NAMES:
+   Verify the file names below match exactly what is in your
+   /fonts folder. Google Fonts downloads typically use this
+   naming. File names are case-sensitive on some servers.
+
+   Expected files in /fonts:
+     Ultra-Regular.ttf
+     Montserrat-Light.ttf       (weight 300)
+     Montserrat-Regular.ttf     (weight 400)
+     Montserrat-Medium.ttf      (weight 500)
+     Montserrat-SemiBold.ttf    (weight 600)
+     Montserrat-Bold.ttf        (weight 700)
+
+   If your files are named differently (e.g. with spaces or
+   all lowercase), update the url() paths below to match.
+   ============================================================ */
+
+/* ------------------------------------------------------------------ */
+/*  @font-face — Ultra (Display / Headings)                           */
+/* ------------------------------------------------------------------ */
+@font-face {
+  font-family: "Ultra";
+  src: url("fonts/ultra-v25-latin-regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ------------------------------------------------------------------ */
+/*  @font-face — Montserrat (Body / UI)                               */
+/* ------------------------------------------------------------------ */
+@font-face {
+  font-family: "Montserrat";
+  src: url("fonts/montserrat-v31-latin-regular.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("fonts/montserrat-v31-latin-regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("fonts/montserrat-v31-latin-regular.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("fonts/montserrat-v31-latin-regular.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("fonts/montserrat-v31-latin-700.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Hero Section — Background Image                                   */
+/* ------------------------------------------------------------------ */
+.hero-bg {
+  background-image: url("img/Hero Section image.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Wave Background Pattern (used on decorative overlays)            */
+/* ------------------------------------------------------------------ */
+.wave-bg {
+  background-color: #2283c6;
+  background-image:
+    radial-gradient(
+      circle at 100% 50%,
+      transparent 20%,
+      rgba(255, 255, 255, 0.15) 21%,
+      rgba(255, 255, 255, 0.15) 34%,
+      transparent 35%,
+      transparent
+    ),
+    radial-gradient(
+      circle at 0% 50%,
+      transparent 20%,
+      rgba(255, 255, 255, 0.15) 21%,
+      rgba(255, 255, 255, 0.15) 34%,
+      transparent 35%,
+      transparent
+    );
+  background-size: 60px 120px;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Active Tab State (Course section tabs)                            */
+/* ------------------------------------------------------------------ */
+.tab-active {
+  background-color: #2283c6 !important;
+  color: #ffffff !important;
+  border-color: #2283c6 !important;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Toast Notification                                                */
+/* ------------------------------------------------------------------ */
+#toast {
+  visibility: hidden;
+  opacity: 0;
+  transition:
+    visibility 0s,
+    opacity 0.5s linear;
+}
+
+#toast.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Body — Bottom Padding for sticky CTA bar                         */
+/* ------------------------------------------------------------------ */
+body {
+  padding-bottom: 120px;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Partner / Training Provider Logos                                 */
+/* ------------------------------------------------------------------ */
+.partner-logo {
+  height: 52px;
+  width: auto;
+  max-width: 140px;
+  object-fit: contain;
+  filter: grayscale(20%);
+  transition:
+    filter 0.25s ease,
+    transform 0.2s ease;
+}
+
+.partner-logo:hover {
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}

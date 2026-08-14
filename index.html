@@ -1,0 +1,1384 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thriving Booking Agency | Maritime &amp; Hospitality Training</title>
+
+    <!--
+      ============================================================
+      THRIVING BOOKING AGENCY — index.html
+      Root: C:\Users\Griff Concepts\Desktop\Website\
+      ============================================================
+      File references (all relative to root folder):
+        CSS        →  style.css
+        JS         →  script.js
+        Images     →  img/filename.ext
+        Fonts      →  fonts/filename.ttf  (referenced inside style.css)
+      ============================================================
+    -->
+
+    <!-- Local Fonts + Custom CSS (loaded first so @font-face is ready) -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- FontAwesome Icons (CDN — icons used throughout the site) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Tailwind CSS via CDN
+         NOTE: For a production/deployed website, replace this CDN
+         with a proper Tailwind build using npm. The CDN version is
+         fine for local development and preview. -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Config — extends Tailwind with site colours and fonts -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              oceanBlue: "#2283C6",
+              cornflower: "#98E1FF",
+              pureWhite: "#FFFFFF",
+              darkNavy: "#0B1E36",
+            },
+            fontFamily: {
+              display: ["Ultra", "serif"],
+              body: ["Montserrat", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+
+  <body class="font-body text-darkNavy bg-pureWhite antialiased">
+    <!-- ============================================================ -->
+    <!-- HEADER & NAVIGATION                                          -->
+    <!-- ============================================================ -->
+    <header
+      class="fixed w-full top-0 z-50 bg-pureWhite/95 backdrop-blur-sm border-b border-cornflower shadow-sm"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+          <!-- Logo -->
+          <div class="flex-shrink-0 flex items-center">
+            <a href="#home">
+              <img
+                src="img/Thriving Booking Logo.png"
+                alt="Thriving Booking Agency"
+                class="h-16 w-auto"
+              />
+            </a>
+          </div>
+
+          <!-- Desktop Navigation -->
+          <nav class="hidden md:flex space-x-8">
+            <a
+              href="#home"
+              class="text-darkNavy hover:text-oceanBlue font-medium transition-colors duration-200"
+              >Home</a
+            >
+            <a
+              href="#about"
+              class="text-darkNavy hover:text-oceanBlue font-medium transition-colors duration-200"
+              >About</a
+            >
+            <a
+              href="#courses"
+              class="text-darkNavy hover:text-oceanBlue font-medium transition-colors duration-200"
+              >Courses</a
+            >
+            <a
+              href="#pathways"
+              class="text-darkNavy hover:text-oceanBlue font-medium transition-colors duration-200"
+              >Pathways</a
+            >
+            <a
+              href="#testimonials"
+              class="text-darkNavy hover:text-oceanBlue font-medium transition-colors duration-200"
+              >Testimonials</a
+            >
+            <a
+              href="#contact"
+              class="text-darkNavy hover:text-oceanBlue font-medium transition-colors duration-200"
+              >Contact</a
+            >
+          </nav>
+
+          <!-- Desktop Social & Contact Icons -->
+          <div class="hidden md:flex items-center gap-4">
+            <a
+              href="https://wa.me/2761467284"
+              target="_blank"
+              class="text-darkNavy hover:text-oceanBlue transition-colors"
+              title="WhatsApp"
+            >
+              <i class="fa-brands fa-whatsapp text-xl"></i>
+            </a>
+            <a
+              href="https://www.instagram.com/thriving_bookings/"
+              target="_blank"
+              class="text-darkNavy hover:text-oceanBlue transition-colors"
+              title="Instagram"
+            >
+              <i class="fa-brands fa-instagram text-xl"></i>
+            </a>
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              class="text-darkNavy hover:text-oceanBlue transition-colors"
+              title="Facebook"
+            >
+              <i class="fa-brands fa-facebook text-xl"></i>
+            </a>
+          </div>
+
+          <!-- Mobile: WhatsApp + Hamburger -->
+          <div class="md:hidden flex items-center gap-3">
+            <a
+              href="https://wa.me/2761467284"
+              target="_blank"
+              class="text-darkNavy hover:text-oceanBlue"
+            >
+              <i class="fa-brands fa-whatsapp text-lg"></i>
+            </a>
+            <button
+              id="mobile-menu-btn"
+              class="text-darkNavy hover:text-oceanBlue focus:outline-none"
+            >
+              <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Navigation Dropdown -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-pureWhite border-t border-cornflower"
+      >
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col">
+          <a
+            href="#home"
+            class="mobile-link block px-3 py-2 text-darkNavy hover:bg-cornflower/20 rounded-md"
+            >Home</a
+          >
+          <a
+            href="#about"
+            class="mobile-link block px-3 py-2 text-darkNavy hover:bg-cornflower/20 rounded-md"
+            >About</a
+          >
+          <a
+            href="#courses"
+            class="mobile-link block px-3 py-2 text-darkNavy hover:bg-cornflower/20 rounded-md"
+            >Courses</a
+          >
+          <a
+            href="#pathways"
+            class="mobile-link block px-3 py-2 text-darkNavy hover:bg-cornflower/20 rounded-md"
+            >Pathways</a
+          >
+          <a
+            href="#testimonials"
+            class="mobile-link block px-3 py-2 text-darkNavy hover:bg-cornflower/20 rounded-md"
+            >Testimonials</a
+          >
+          <a
+            href="#contact"
+            class="mobile-link block px-3 py-2 text-darkNavy hover:bg-cornflower/20 rounded-md"
+            >Contact Us</a
+          >
+          <div class="border-t border-cornflower/20 mt-2 pt-2 flex gap-4 px-3">
+            <a
+              href="https://www.instagram.com/thriving_bookings/"
+              target="_blank"
+              class="text-darkNavy hover:text-oceanBlue"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              class="text-darkNavy hover:text-oceanBlue"
+              ><i class="fa-brands fa-facebook"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ============================================================ -->
+    <!-- SECTION A: HERO                                              -->
+    <!-- ============================================================ -->
+    <section
+      id="home"
+      class="hero-bg pt-32 pb-20 lg:pt-48 lg:pb-32 text-pureWhite relative overflow-hidden"
+    >
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center"
+      >
+        <h1
+          class="font-display text-4xl md:text-5xl lg:text-6xl mb-6 leading-tight text-cornflower"
+        >
+          Expert Booking for <br class="hidden md:block" />Maritime &amp;
+          Hospitality Training
+        </h1>
+        <p
+          class="text-lg md:text-xl max-w-3xl mx-auto mb-10 font-light opacity-90"
+        >
+          Helping you take the next step in your career. Facilitating essential
+          professional development courses and industry certifications.
+        </p>
+
+        <div class="flex flex-col sm:flex-row justify-center gap-4 mb-12">
+          <button
+            onclick="document.getElementById('contact').scrollIntoView()"
+            class="bg-oceanBlue hover:bg-blue-600 text-white font-semibold py-3 px-8 rounded border border-oceanBlue transition-all shadow-lg hover:shadow-oceanBlue/50"
+          >
+            Enquire / Book Now
+          </button>
+          <button
+            onclick="document.getElementById('courses').scrollIntoView()"
+            class="bg-transparent hover:bg-white/10 text-cornflower border border-cornflower font-semibold py-3 px-8 rounded transition-all"
+          >
+            Explore Courses
+          </button>
+        </div>
+
+        <div
+          class="flex flex-wrap justify-center gap-4 md:gap-8 text-sm md:text-base font-medium"
+        >
+          <span
+            class="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full border border-white/20 backdrop-blur-md"
+          >
+            <i class="fa-solid fa-location-dot text-cornflower"></i> Cape Town
+            Location
+          </span>
+          <span
+            class="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full border border-white/20 backdrop-blur-md"
+          >
+            <i class="fa-solid fa-globe text-cornflower"></i> Internationally
+            Recognised
+          </span>
+          <span
+            class="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full border border-white/20 backdrop-blur-md"
+          >
+            <i class="fa-solid fa-handshake text-cornflower"></i> Trusted
+            Training Partners
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION B: ABOUT / WHY CHOOSE US                            -->
+    <!-- ============================================================ -->
+    <section id="about" class="py-20 bg-pureWhite">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="font-display text-3xl md:text-4xl text-oceanBlue mb-6">
+            Why Choose Thriving Bookings?
+          </h2>
+          <p class="text-darkNavy/80 leading-relaxed text-lg">
+            We partner with trusted international training providers to offer
+            career-enhancing courses for those pursuing opportunities in the
+            superyacht, hospitality, and maritime industries. Whether you're
+            starting your first role or expanding your qualifications, we're
+            here to help guide your training journey.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
+          <!-- Value Prop 1 -->
+          <div
+            class="text-center p-6 border border-cornflower rounded-lg bg-blue-50/30 hover:shadow-md transition-shadow"
+          >
+            <div
+              class="w-16 h-16 mx-auto bg-oceanBlue text-white rounded-full flex items-center justify-center text-2xl mb-4 shadow-sm"
+            >
+              <i class="fa-solid fa-certificate"></i>
+            </div>
+            <h3 class="font-bold text-darkNavy mb-2">
+              Internationally Recognised
+            </h3>
+          </div>
+          <!-- Value Prop 2 -->
+          <div
+            class="text-center p-6 border border-cornflower rounded-lg bg-blue-50/30 hover:shadow-md transition-shadow"
+          >
+            <div
+              class="w-16 h-16 mx-auto bg-oceanBlue text-white rounded-full flex items-center justify-center text-2xl mb-4 shadow-sm"
+            >
+              <i class="fa-solid fa-handshake-angle"></i>
+            </div>
+            <h3 class="font-bold text-darkNavy mb-2">Trusted Providers</h3>
+          </div>
+          <!-- Value Prop 3 -->
+          <div
+            class="text-center p-6 border border-cornflower rounded-lg bg-blue-50/30 hover:shadow-md transition-shadow"
+          >
+            <div
+              class="w-16 h-16 mx-auto bg-oceanBlue text-white rounded-full flex items-center justify-center text-2xl mb-4 shadow-sm"
+            >
+              <i class="fa-solid fa-headset"></i>
+            </div>
+            <h3 class="font-bold text-darkNavy mb-2">Friendly Support</h3>
+          </div>
+          <!-- Value Prop 4 -->
+          <div
+            class="text-center p-6 border border-cornflower rounded-lg bg-blue-50/30 hover:shadow-md transition-shadow"
+          >
+            <div
+              class="w-16 h-16 mx-auto bg-oceanBlue text-white rounded-full flex items-center justify-center text-2xl mb-4 shadow-sm"
+            >
+              <i class="fa-solid fa-laptop-house"></i>
+            </div>
+            <h3 class="font-bold text-darkNavy mb-2">Flexible Options</h3>
+          </div>
+          <!-- Value Prop 5 -->
+          <div
+            class="text-center p-6 border border-cornflower rounded-lg bg-blue-50/30 hover:shadow-md transition-shadow"
+          >
+            <div
+              class="w-16 h-16 mx-auto bg-oceanBlue text-white rounded-full flex items-center justify-center text-2xl mb-4 shadow-sm"
+            >
+              <i class="fa-solid fa-ship"></i>
+            </div>
+            <h3 class="font-bold text-darkNavy mb-2">Perfect for Crew</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION C: COURSES OFFERED                                   -->
+    <!-- ============================================================ -->
+    <section
+      id="courses"
+      class="py-20 bg-gray-50 border-y border-cornflower/30"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="font-display text-3xl md:text-4xl text-oceanBlue mb-4">
+            Courses Offered
+          </h2>
+          <p class="text-darkNavy/70">
+            Select a category to view our comprehensive training options.
+          </p>
+        </div>
+
+        <!-- Category Tabs -->
+        <div class="flex justify-center gap-4 mb-10">
+          <button
+            id="tab-maritime"
+            class="course-tab tab-active px-6 py-2 border-2 border-oceanBlue text-oceanBlue font-bold rounded hover:bg-oceanBlue/10 transition-colors"
+          >
+            <i class="fa-solid fa-anchor mr-2"></i> Maritime Courses
+          </button>
+          <button
+            id="tab-hospitality"
+            class="course-tab px-6 py-2 border-2 border-oceanBlue text-oceanBlue font-bold rounded hover:bg-oceanBlue/10 transition-colors"
+          >
+            <i class="fa-solid fa-mug-hot mr-2"></i> Hospitality Courses
+          </button>
+        </div>
+
+        <!-- -------------------------------------------------------- -->
+        <!-- Tab Content: Maritime Courses                            -->
+        <!-- -------------------------------------------------------- -->
+        <div
+          id="content-maritime"
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+        >
+          <!-- MCA STCW Basic Safety Training -->
+          <div
+            class="bg-white rounded border-l-4 border-oceanBlue shadow-sm hover:shadow-md transition-shadow overflow-hidden"
+          >
+            <img
+              src="img/MCA STCW Basic safety Training image.jpeg"
+              alt="MCA STCW Basic Safety Training"
+              class="w-full aspect-square object-cover"
+            />
+            <div class="p-6">
+              <h3 class="font-bold text-lg mb-2 text-darkNavy">
+                MCA STCW Basic Safety Training
+              </h3>
+              <p class="text-sm text-darkNavy/70">
+                Mandatory internationally recognised safety certification
+                required for all working seafarers.
+              </p>
+            </div>
+          </div>
+
+          <!-- MCA PDSD -->
+          <div
+            class="bg-white rounded border-l-4 border-oceanBlue shadow-sm hover:shadow-md transition-shadow overflow-hidden"
+          >
+            <img
+              src="img/MCA PDSD image.jpeg"
+              alt="MCA STCW PDSD"
+              class="w-full aspect-square object-cover"
+            />
+            <div class="p-6">
+              <h3 class="font-bold text-lg mb-2 text-darkNavy">MCA PDSD</h3>
+              <p class="text-sm text-darkNavy/70">
+                Proficiency in Designated Security Duties – required security
+                training for crew on commercial vessels.
+              </p>
+            </div>
+          </div>
+
+          <!-- MCA Yacht Rating -->
+          <div
+            class="bg-white rounded border-l-4 border-oceanBlue shadow-sm hover:shadow-md transition-shadow overflow-hidden"
+          >
+            <img
+              src="img/MCA Yacht Rating image.jpeg"
+              alt="MCA Yacht Rating Course"
+              class="w-full aspect-square object-cover"
+            />
+            <div class="p-6">
+              <h3 class="font-bold text-lg mb-2 text-darkNavy">
+                MCA Yacht Rating
+              </h3>
+              <p class="text-sm text-darkNavy/70">
+                Entry-level superyacht certification recognised by the Maritime
+                &amp; Coastguard Agency for deck crew.
+              </p>
+            </div>
+          </div>
+
+          <!-- IYT RIB Training -->
+          <div
+            class="bg-white rounded border-l-4 border-oceanBlue shadow-sm hover:shadow-md transition-shadow overflow-hidden"
+          >
+            <img
+              src="img/IYT RIB Training image.jpeg"
+              alt="IYT RIB Training"
+              class="w-full aspect-square object-cover"
+            />
+            <div class="p-6">
+              <h3 class="font-bold text-lg mb-2 text-darkNavy">
+                IYT RIB Training
+              </h3>
+              <p class="text-sm text-darkNavy/70">
+                Rigid Inflatable Boat training for powerboat handling and crew
+                tender operations.
+              </p>
+            </div>
+          </div>
+
+          <!-- EDH -->
+          <div
+            class="bg-white rounded border-l-4 border-oceanBlue shadow-sm hover:shadow-md transition-shadow overflow-hidden"
+          >
+            <img
+              src="img/EDH image.jpeg"
+              alt="Efficient Deck Hand Course"
+              class="w-full aspect-square object-cover"
+            />
+            <div class="p-6">
+              <h3 class="font-bold text-lg mb-2 text-darkNavy">EDH</h3>
+              <p class="text-sm text-darkNavy/70">
+                Efficient Deck Hand qualification – essential for deck crew.
+              </p>
+            </div>
+          </div>
+
+          <!-- AEC 1 -->
+          <div
+            class="bg-white rounded border-l-4 border-oceanBlue shadow-sm hover:shadow-md transition-shadow overflow-hidden"
+          >
+            <img
+              src="img/AEC 1 image.jpeg"
+              alt="AEC1 Engine Course"
+              class="w-full aspect-square object-cover"
+            />
+            <div class="p-6">
+              <h3 class="font-bold text-lg mb-2 text-darkNavy">AEC 1</h3>
+              <p class="text-sm text-darkNavy/70">
+                Approved Engine Course 1 – for those starting a career in
+                engineering.
+              </p>
+            </div>
+          </div>
+
+          <!-- AEC 2 -->
+          <!-- NOTE: filename is AEC 2 image.jpeg -->
+          <div
+            class="bg-white rounded border-l-4 border-oceanBlue shadow-sm hover:shadow-md transition-shadow overflow-hidden"
+          >
+            <img
+              src="img/AEC 2 image.jpeg"
+              alt="AEC2 Engine Course"
+              class="w-full aspect-square object-cover"
+            />
+            <div class="p-6">
+              <h3 class="font-bold text-lg mb-2 text-darkNavy">AEC 2</h3>
+              <p class="text-sm text-darkNavy/70">
+                Approved Engine Course 2 – to further develop engineering
+                knowledge.
+              </p>
+            </div>
+          </div>
+
+          <!-- ECDIS -->
+          <div
+            class="bg-white rounded border-l-4 border-oceanBlue shadow-sm hover:shadow-md transition-shadow overflow-hidden"
+          >
+            <img
+              src="img/ECDIS image.jpeg"
+              alt="ECDIS Training"
+              class="w-full aspect-square object-cover"
+            />
+            <div class="p-6">
+              <h3 class="font-bold text-lg mb-2 text-darkNavy">ECDIS</h3>
+              <p class="text-sm text-darkNavy/70">
+                Electronic Chart Display &amp; Information System.
+              </p>
+            </div>
+          </div>
+
+          <!-- IYT Master of Yachts 200T -->
+          <div
+            class="bg-white rounded border-l-4 border-oceanBlue shadow-sm hover:shadow-md transition-shadow overflow-hidden"
+          >
+            <img
+              src="img/IYT Master of Yachts 200T.jpeg"
+              alt="IYT Master of Yachts 200T"
+              class="w-full aspect-square object-cover"
+            />
+            <div class="p-6">
+              <h3 class="font-bold text-lg mb-2 text-darkNavy">
+                IYT Master of Yachts 200T
+              </h3>
+              <p class="text-sm text-darkNavy/70">
+                International qualifications (Limited &amp; Unlimited) up to and
+                over 200 gross tons.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- /content-maritime -->
+
+        <!-- -------------------------------------------------------- -->
+        <!-- Tab Content: Hospitality Courses                         -->
+        <!-- -------------------------------------------------------- -->
+        <div
+          id="content-hospitality"
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 hidden"
+        >
+          <!-- Barista Training -->
+          <div
+            class="bg-white rounded border-l-4 border-oceanBlue shadow-sm hover:shadow-md transition-shadow overflow-hidden"
+          >
+            <img
+              src="img/Barista Training image.jpeg"
+              alt="Barista Training"
+              class="w-full aspect-square object-cover"
+            />
+            <div class="p-6">
+              <h3 class="font-bold text-lg mb-2 text-darkNavy">
+                Barista Training
+              </h3>
+              <p class="text-sm text-darkNavy/70 mb-3">
+                Professional coffee preparation, milk texturing, and customer
+                service.
+              </p>
+              <span
+                class="text-xs font-semibold bg-cornflower/30 text-oceanBlue px-2 py-1 rounded"
+              >
+                Ideal for: Stewards/esses, Café Staff
+              </span>
+            </div>
+          </div>
+
+          <!-- Food Safety Level 2 -->
+          <div
+            class="bg-white rounded border-l-4 border-oceanBlue shadow-sm hover:shadow-md transition-shadow overflow-hidden"
+          >
+            <img
+              src="img/Food safety level 2 image.jpeg"
+              alt="Highfield Food Hygiene Level 2 Course"
+              class="w-full aspect-square object-cover"
+            />
+            <div class="p-6">
+              <h3 class="font-bold text-lg mb-2 text-darkNavy">
+                Food Safety Level 2
+              </h3>
+              <p class="text-sm text-darkNavy/70 mb-3">
+                Highfield UK Approved. Worldwide recognized food hygiene and
+                safety practices.
+              </p>
+              <span
+                class="text-xs font-semibold bg-cornflower/30 text-oceanBlue px-2 py-1 rounded"
+              >
+                Ideal for: Galley Crew, Hospitality
+              </span>
+            </div>
+          </div>
+
+          <!-- Food Safety Level 3 -->
+          <div
+            class="bg-white rounded border-l-4 border-oceanBlue shadow-sm hover:shadow-md transition-shadow overflow-hidden"
+          >
+            <img
+              src="img/Food safety level 3 image.jpeg"
+              alt="Food Level 3 Hygiene Course"
+              class="w-full aspect-square object-cover"
+            />
+            <div class="p-6">
+              <h3 class="font-bold text-lg mb-2 text-darkNavy">
+                Food Safety Level 3
+              </h3>
+              <p class="text-sm text-darkNavy/70 mb-3">
+                For supervisory roles requiring deep food safety management
+                understanding.
+              </p>
+              <span
+                class="text-xs font-semibold bg-cornflower/30 text-oceanBlue px-2 py-1 rounded"
+              >
+                Ideal for: Chefs, Managers
+              </span>
+            </div>
+          </div>
+        </div>
+        <!-- /content-hospitality -->
+
+        <!-- -------------------------------------------------------- -->
+        <!-- Training Partners — Logo Images                          -->
+        <!-- -------------------------------------------------------- -->
+        <div class="mt-16 pt-8 border-t border-gray-200 text-center">
+          <p
+            class="text-sm font-semibold text-darkNavy/50 uppercase tracking-widest mb-6"
+          >
+            Our Trusted Training Partners
+          </p>
+          <div class="flex flex-wrap justify-center items-center gap-10">
+            <img
+              src="img/Highfield Qualification_logo.png"
+              alt="Highfield Qualifications International Approved Centre"
+              class="partner-logo"
+            />
+            <img
+              src="img/pyt_logo.jpg"
+              alt="PYT Yachting"
+              class="partner-logo"
+            />
+            <img
+              src="img/samtra-logo.jpg"
+              alt="SAMTRA – South African Maritime Training Academy"
+              class="partner-logo"
+            />
+            <img
+              src="img/iyt_1_logo.jpg"
+              alt="International Yacht Training Worldwide"
+              class="partner-logo"
+            />
+            <img
+              src="img/BoaBab_logo.jpg"
+              alt="Baobab – We Develop People Professionally"
+              class="partner-logo"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION D: RECOMMENDED TRAINING PATHWAYS                    -->
+    <!-- ============================================================ -->
+    <section id="pathways" class="py-20 bg-pureWhite">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="font-display text-3xl md:text-4xl text-oceanBlue mb-4">
+            Recommended Training Pathways
+          </h2>
+          <p class="text-darkNavy/70">
+            Structured progressions to build the right skills for the career you
+            want.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Superyacht Career -->
+          <div
+            class="bg-darkNavy text-white rounded-lg overflow-hidden shadow-lg border border-oceanBlue/50 relative"
+          >
+            <div class="bg-oceanBlue py-4 text-center">
+              <h3 class="font-display text-xl tracking-wide">
+                Superyacht Career
+              </h3>
+            </div>
+            <ul class="p-6 space-y-4 text-sm font-light">
+              <li class="flex items-center gap-3">
+                <i class="fa-solid fa-check text-cornflower"></i> MCA Yacht
+                Rating
+              </li>
+              <li class="flex items-center gap-3">
+                <i class="fa-solid fa-check text-cornflower"></i> IYT RIB
+                Training
+              </li>
+              <li class="flex items-center gap-3">
+                <i class="fa-solid fa-check text-cornflower"></i> MCA STCW Basic
+                Safety
+              </li>
+              <li class="flex items-center gap-3">
+                <i class="fa-solid fa-check text-cornflower"></i> MCA PDSD
+              </li>
+              <li class="flex items-center gap-3">
+                <i class="fa-solid fa-check text-cornflower"></i> EDH
+              </li>
+              <li class="flex items-center gap-3">
+                <i class="fa-solid fa-check text-cornflower"></i> Master of
+                Yachts 200T (Lim/Unlim)
+              </li>
+            </ul>
+          </div>
+
+          <!-- Engineering Career -->
+          <div
+            class="bg-darkNavy text-white rounded-lg overflow-hidden shadow-lg border border-oceanBlue/50"
+          >
+            <div class="bg-oceanBlue py-4 text-center">
+              <h3 class="font-display text-xl tracking-wide">
+                Engineering Career
+              </h3>
+            </div>
+            <ul class="p-6 space-y-4 text-sm font-light">
+              <li class="flex items-center gap-3">
+                <i class="fa-solid fa-check text-cornflower"></i> AEC 1
+              </li>
+              <li class="flex items-center gap-3">
+                <i class="fa-solid fa-check text-cornflower"></i> AEC 2
+              </li>
+              <li class="flex items-center gap-3">
+                <i class="fa-solid fa-check text-cornflower"></i> MCA STCW Basic
+                Safety
+              </li>
+              <li class="flex items-center gap-3">
+                <i class="fa-solid fa-check text-cornflower"></i> MCA PDSD
+              </li>
+              <li class="flex items-center gap-3">
+                <i class="fa-regular fa-circle-check text-cornflower/50"></i>
+                ECDIS (Optional)
+              </li>
+            </ul>
+          </div>
+
+          <!-- Hospitality Career -->
+          <div
+            class="bg-darkNavy text-white rounded-lg overflow-hidden shadow-lg border border-oceanBlue/50"
+          >
+            <div class="bg-oceanBlue py-4 text-center">
+              <h3 class="font-display text-xl tracking-wide">
+                Hospitality Career
+              </h3>
+            </div>
+            <ul class="p-6 space-y-4 text-sm font-light">
+              <li class="flex items-center gap-3">
+                <i class="fa-solid fa-check text-cornflower"></i> Food Safety
+                Level 2
+              </li>
+              <li class="flex items-center gap-3">
+                <i class="fa-solid fa-check text-cornflower"></i> Food Safety
+                Level 3
+              </li>
+              <li class="flex items-center gap-3">
+                <i class="fa-solid fa-check text-cornflower"></i> Barista
+                Training
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION E: COURSE CALENDAR                                   -->
+    <!-- ============================================================ -->
+    <section
+      id="calendar"
+      class="py-20 bg-gray-50 border-y border-cornflower/30"
+    >
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="flex flex-col md:flex-row justify-between items-end mb-8 border-b-2 border-oceanBlue pb-4"
+        >
+          <div>
+            <h2 class="font-display text-3xl md:text-4xl text-oceanBlue mb-2">
+              Course Calendar
+            </h2>
+            <p class="text-darkNavy/70">
+              View upcoming availability for our specialized training programs.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-x-auto"
+        >
+          <table class="w-full text-left border-collapse">
+            <thead>
+              <tr class="bg-oceanBlue text-white">
+                <th class="p-4 font-semibold text-sm">Course Category</th>
+                <th class="p-4 font-semibold text-sm">Next Available Dates</th>
+                <th class="p-4 font-semibold text-sm text-right">Action</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200">
+              <tr class="hover:bg-gray-50 transition-colors">
+                <td class="p-4 font-medium text-darkNavy">
+                  Maritime Seamanship &amp; Safety
+                </td>
+                <td class="p-4 text-sm text-darkNavy/70">
+                  <span
+                    class="bg-cornflower/20 text-oceanBlue px-2 py-1 rounded text-xs font-bold border border-cornflower"
+                    >2026 Season Open</span
+                  >
+                  – Contact for exact dates
+                </td>
+                <td class="p-4 text-right">
+                  <a
+                    href="#contact"
+                    class="text-sm font-bold text-oceanBlue hover:underline"
+                    >Enquire <i class="fa-solid fa-arrow-right ml-1"></i
+                  ></a>
+                </td>
+              </tr>
+              <tr class="hover:bg-gray-50 transition-colors">
+                <td class="p-4 font-medium text-darkNavy">
+                  Marine Engineering (AEC)
+                </td>
+                <td class="p-4 text-sm text-darkNavy/70">
+                  <span
+                    class="bg-cornflower/20 text-oceanBlue px-2 py-1 rounded text-xs font-bold border border-cornflower"
+                    >2026 Season Open</span
+                  >
+                  – Contact for exact dates
+                </td>
+                <td class="p-4 text-right">
+                  <a
+                    href="#contact"
+                    class="text-sm font-bold text-oceanBlue hover:underline"
+                    >Enquire <i class="fa-solid fa-arrow-right ml-1"></i
+                  ></a>
+                </td>
+              </tr>
+              <tr class="hover:bg-gray-50 transition-colors">
+                <td class="p-4 font-medium text-darkNavy">
+                  Hospitality &amp; Food Safety
+                </td>
+                <td class="p-4 text-sm text-darkNavy/70">
+                  <span
+                    class="bg-cornflower/20 text-oceanBlue px-2 py-1 rounded text-xs font-bold border border-cornflower"
+                    >2026 Season Open</span
+                  >
+                  – Contact for exact dates
+                </td>
+                <td class="p-4 text-right">
+                  <a
+                    href="#contact"
+                    class="text-sm font-bold text-oceanBlue hover:underline"
+                    >Enquire <i class="fa-solid fa-arrow-right ml-1"></i
+                  ></a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION F: TESTIMONIALS & SOCIAL PROOF                      -->
+    <!-- ============================================================ -->
+    <section id="testimonials" class="py-20 bg-pureWhite">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="font-display text-3xl md:text-4xl text-oceanBlue mb-4">
+            Student Success Stories
+          </h2>
+          <p class="text-darkNavy/70 max-w-2xl mx-auto">
+            Hear from our graduates who have advanced their careers through
+            Thriving Booking Agency training.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Testimonial 1 -->
+          <div
+            class="bg-gray-50 p-8 rounded-lg border border-cornflower/30 hover:shadow-md transition-shadow"
+          >
+            <div class="flex items-center gap-2 mb-4">
+              <div class="flex text-cornflower">
+                <i class="fa-solid fa-star text-sm"></i>
+                <i class="fa-solid fa-star text-sm"></i>
+                <i class="fa-solid fa-star text-sm"></i>
+                <i class="fa-solid fa-star text-sm"></i>
+                <i class="fa-solid fa-star text-sm"></i>
+              </div>
+            </div>
+            <p class="text-darkNavy/80 mb-4 italic">
+              "The MCA Yacht Rating course was thorough and professional. Within
+              3 months of completing, I secured a position on a superyacht in
+              the Mediterranean. Thriving made the whole process seamless."
+            </p>
+            <div class="flex items-center gap-3">
+              <div
+                class="w-10 h-10 rounded-full bg-oceanBlue text-white flex items-center justify-center font-bold"
+              >
+                J
+              </div>
+              <div>
+                <h4 class="font-bold text-darkNavy">James M.</h4>
+                <p class="text-sm text-darkNavy/60">Deckhand, Superyacht</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div
+            class="bg-gray-50 p-8 rounded-lg border border-cornflower/30 hover:shadow-md transition-shadow"
+          >
+            <div class="flex items-center gap-2 mb-4">
+              <div class="flex text-cornflower">
+                <i class="fa-solid fa-star text-sm"></i>
+                <i class="fa-solid fa-star text-sm"></i>
+                <i class="fa-solid fa-star text-sm"></i>
+                <i class="fa-solid fa-star text-sm"></i>
+                <i class="fa-solid fa-star text-sm"></i>
+              </div>
+            </div>
+            <p class="text-darkNavy/80 mb-4 italic">
+              "The AEC 1 &amp; 2 courses prepared me for engine room
+              responsibilities. The instructors were knowledgeable and patient.
+              I'm now Chief Engineer on a commercial vessel."
+            </p>
+            <div class="flex items-center gap-3">
+              <div
+                class="w-10 h-10 rounded-full bg-oceanBlue text-white flex items-center justify-center font-bold"
+              >
+                M
+              </div>
+              <div>
+                <h4 class="font-bold text-darkNavy">Miguel C.</h4>
+                <p class="text-sm text-darkNavy/60">
+                  Chief Engineer, Commercial Vessel
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div
+            class="bg-gray-50 p-8 rounded-lg border border-cornflower/30 hover:shadow-md transition-shadow"
+          >
+            <div class="flex items-center gap-2 mb-4">
+              <div class="flex text-cornflower">
+                <i class="fa-solid fa-star text-sm"></i>
+                <i class="fa-solid fa-star text-sm"></i>
+                <i class="fa-solid fa-star text-sm"></i>
+                <i class="fa-solid fa-star text-sm"></i>
+                <i class="fa-solid fa-star text-sm"></i>
+              </div>
+            </div>
+            <p class="text-darkNavy/80 mb-4 italic">
+              "I did the Barista &amp; Food Safety courses to transition into
+              yacht hospitality. The practical training was excellent, and I
+              landed a stewardess role on a luxury yacht immediately."
+            </p>
+            <div class="flex items-center gap-3">
+              <div
+                class="w-10 h-10 rounded-full bg-oceanBlue text-white flex items-center justify-center font-bold"
+              >
+                S
+              </div>
+              <div>
+                <h4 class="font-bold text-darkNavy">Sophie T.</h4>
+                <p class="text-sm text-darkNavy/60">Yacht Stewardess</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Trust & Credentials Bar -->
+        <div
+          class="mt-12 bg-oceanBlue/10 border border-cornflower/50 rounded-lg p-8 text-center"
+        >
+          <h3 class="font-bold text-darkNavy mb-2">Trust &amp; Credentials</h3>
+          <p class="text-darkNavy/70 mb-4">
+            We partner exclusively with internationally recognized training
+            providers including Highfield Qualifications (UK), PYT Yachting, and
+            SAMTRA.
+          </p>
+          <div
+            class="flex flex-wrap justify-center gap-6 text-sm font-semibold text-oceanBlue"
+          >
+            <span
+              ><i class="fa-solid fa-certificate mr-2"></i>MCA Approved</span
+            >
+            <span
+              ><i class="fa-solid fa-shield mr-2"></i>Industry Certified</span
+            >
+            <span
+              ><i class="fa-solid fa-globe mr-2"></i>Internationally
+              Recognized</span
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECTION G: CONTACT & ENQUIRY FORM                           -->
+    <!-- ============================================================ -->
+    <section id="contact" class="py-20 bg-pureWhite relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-5 gap-12">
+          <!-- Contact Information -->
+          <div class="lg:col-span-2">
+            <h2 class="font-display text-3xl md:text-4xl text-oceanBlue mb-6">
+              Get In Touch
+            </h2>
+            <p class="text-darkNavy/70 mb-8">
+              We're here to help! Submit your training request below, or contact
+              us directly to confirm availability. We look forward to assisting
+              you on your training journey.
+            </p>
+
+            <div class="space-y-6">
+              <!-- WhatsApp -->
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-10 h-10 rounded bg-green-500/30 flex items-center justify-center text-green-600 shrink-0"
+                >
+                  <i class="fa-brands fa-whatsapp"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-darkNavy">WhatsApp (Quickest)</h4>
+                  <a
+                    href="https://wa.me/2761467284"
+                    target="_blank"
+                    class="text-darkNavy/70 hover:text-oceanBlue font-semibold"
+                    >+27 61 467 284</a
+                  >
+                  <p class="text-xs text-darkNavy/50 mt-1">
+                    Message us anytime for instant response
+                  </p>
+                </div>
+              </div>
+              <!-- Phone -->
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-10 h-10 rounded bg-cornflower/30 flex items-center justify-center text-oceanBlue shrink-0"
+                >
+                  <i class="fa-solid fa-phone"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-darkNavy">Call Us</h4>
+                  <a
+                    href="tel:+2761467284"
+                    class="text-darkNavy/70 hover:text-oceanBlue"
+                    >+27 61 467 284</a
+                  >
+                </div>
+              </div>
+              <!-- Email -->
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-10 h-10 rounded bg-cornflower/30 flex items-center justify-center text-oceanBlue shrink-0"
+                >
+                  <i class="fa-solid fa-envelope"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-darkNavy">Email Us</h4>
+                  <a
+                    href="mailto:thrivingbookings@gmail.com"
+                    class="text-darkNavy/70 hover:text-oceanBlue"
+                    >thrivingbookings@gmail.com</a
+                  >
+                </div>
+              </div>
+              <!-- Location -->
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-10 h-10 rounded bg-cornflower/30 flex items-center justify-center text-oceanBlue shrink-0"
+                >
+                  <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-darkNavy">Location</h4>
+                  <p class="text-darkNavy/70">Cape Town, South Africa</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Enquiry Form -->
+          <!--
+            IMPORTANT: Replace the Formspree action URL below with your
+            real Formspree endpoint. Sign up at https://formspree.io,
+            create a form, and paste your unique URL here.
+            Example: action="https://formspree.io/f/abcd1234"
+          -->
+          <div
+            class="lg:col-span-3 bg-white p-8 rounded-lg shadow-xl border border-gray-100"
+          >
+            <form
+              id="enquiryForm"
+              action="https://formspree.io/f/xnpavnke"
+              method="POST"
+              target="formspreeFrame"
+              class="space-y-6"
+            >
+              <input
+                type="hidden"
+                name="_subject"
+                value="Website enquiry - Thriving Booking"
+              />
+              <input type="hidden" id="reply_to" name="_replyto" value="" />
+              <input
+                type="hidden"
+                id="source_page"
+                name="source_page"
+                value=""
+              />
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Full Name -->
+                <div>
+                  <label
+                    for="fullName"
+                    class="block text-sm font-semibold text-darkNavy mb-2"
+                    >Candidate Full Name *</label
+                  >
+                  <input
+                    type="text"
+                    id="fullName"
+                    name="name"
+                    required
+                    class="w-full px-4 py-3 rounded border border-gray-300 focus:border-oceanBlue focus:ring-2 focus:ring-oceanBlue/20 outline-none transition-all"
+                  />
+                </div>
+                <!-- Email -->
+                <div>
+                  <label
+                    for="email"
+                    class="block text-sm font-semibold text-darkNavy mb-2"
+                    >Email Address *</label
+                  >
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    class="w-full px-4 py-3 rounded border border-gray-300 focus:border-oceanBlue focus:ring-2 focus:ring-oceanBlue/20 outline-none transition-all"
+                  />
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Phone -->
+                <div>
+                  <label
+                    for="phone"
+                    class="block text-sm font-semibold text-darkNavy mb-2"
+                    >Telephone / WhatsApp *</label
+                  >
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    required
+                    class="w-full px-4 py-3 rounded border border-gray-300 focus:border-oceanBlue focus:ring-2 focus:ring-oceanBlue/20 outline-none transition-all"
+                  />
+                </div>
+                <!-- Preferred Date -->
+                <div>
+                  <label
+                    for="date"
+                    class="block text-sm font-semibold text-darkNavy mb-2"
+                    >Preferred Attendance Date</label
+                  >
+                  <input
+                    type="date"
+                    id="date"
+                    name="preferred_date"
+                    class="w-full px-4 py-3 rounded border border-gray-300 focus:border-oceanBlue focus:ring-2 focus:ring-oceanBlue/20 outline-none transition-all"
+                  />
+                </div>
+              </div>
+
+              <!-- Course Selection -->
+              <div>
+                <label
+                  for="course"
+                  class="block text-sm font-semibold text-darkNavy mb-2"
+                  >Course You Would Like To Attend *</label
+                >
+                <select
+                  id="course"
+                  name="course"
+                  required
+                  class="w-full px-4 py-3 rounded border border-gray-300 focus:border-oceanBlue focus:ring-2 focus:ring-oceanBlue/20 outline-none transition-all bg-white"
+                >
+                  <option value="" disabled selected>
+                    -- Select a Course --
+                  </option>
+                  <optgroup label="Maritime Courses">
+                    <option value="MCA STCW Basic Safety">
+                      MCA STCW Basic Safety Training
+                    </option>
+                    <option value="MCA PDSD">MCA PDSD</option>
+                    <option value="MCA Yacht Rating">MCA Yacht Rating</option>
+                    <option value="IYT RIB Training">IYT RIB Training</option>
+                    <option value="EDH">EDH</option>
+                    <option value="AEC 1">AEC 1</option>
+                    <option value="AEC 2">AEC 2</option>
+                    <option value="ECDIS">ECDIS</option>
+                    <option value="Master of Yachts 200T">
+                      IYT Master of Yachts 200T (Lim/Unlim)
+                    </option>
+                  </optgroup>
+                  <optgroup label="Hospitality Courses">
+                    <option value="Barista Training">Barista Training</option>
+                    <option value="Food Safety Level 2">
+                      Food Safety Level 2
+                    </option>
+                    <option value="Food Safety Level 3">
+                      Food Safety Level 3
+                    </option>
+                  </optgroup>
+                </select>
+              </div>
+
+              <!-- Message -->
+              <div>
+                <label
+                  for="message"
+                  class="block text-sm font-semibold text-darkNavy mb-2"
+                  >Additional Notes / Message</label
+                >
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="4"
+                  class="w-full px-4 py-3 rounded border border-gray-300 focus:border-oceanBlue focus:ring-2 focus:ring-oceanBlue/20 outline-none transition-all resize-none"
+                ></textarea>
+              </div>
+
+              <!-- Submit Button -->
+              <button
+                type="submit"
+                class="w-full bg-oceanBlue hover:bg-blue-600 text-white font-bold py-4 rounded transition-colors shadow-md"
+              >
+                Submit Request
+              </button>
+              <p class="text-xs text-center text-darkNavy/50 mt-4">
+                By submitting this form, your enquiry will be sent directly to
+                thrivingbookings@gmail.com
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- FOOTER                                                       -->
+    <!-- ============================================================ -->
+    <footer class="bg-darkNavy text-white py-8 border-t border-oceanBlue">
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center"
+      >
+        <div class="flex items-center gap-2 mb-4 md:mb-0">
+          <img
+            src="img/Thriving Booking Logo.png"
+            alt="Thriving Booking Agency"
+            class="h-12 w-auto"
+          />
+        </div>
+        <p class="text-sm text-gray-400">
+          &copy; 2026 Thriving Booking Agency. All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <!-- ============================================================ -->
+    <!-- STICKY CTA BAR (Bottom)                                      -->
+    <!-- ============================================================ -->
+    <div
+      class="fixed bottom-0 left-0 right-0 bg-oceanBlue text-white py-4 shadow-xl z-40 border-t-2 border-cornflower"
+    >
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4"
+      >
+        <div class="text-center sm:text-left">
+          <p class="font-semibold">Ready to advance your career?</p>
+          <p class="text-sm opacity-90">
+            Book your training course today or call us for more details.
+          </p>
+        </div>
+        <div class="flex gap-3 w-full sm:w-auto">
+          <a
+            href="https://wa.me/2761467284"
+            target="_blank"
+            class="flex-1 sm:flex-none bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-6 rounded transition-colors text-center flex items-center justify-center gap-2"
+          >
+            <i class="fa-brands fa-whatsapp"></i> WhatsApp
+          </a>
+          <button
+            onclick="document.getElementById('contact').scrollIntoView()"
+            class="flex-1 sm:flex-none bg-white hover:bg-gray-100 text-oceanBlue font-bold py-2 px-6 rounded transition-colors"
+          >
+            Book Now
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- TOAST NOTIFICATION                                           -->
+    <!-- ============================================================ -->
+    <div
+      id="successOverlay"
+      class="fixed inset-0 bg-black/50 z-50 hidden items-center justify-center p-4"
+    >
+      <div
+        class="relative bg-white rounded-3xl shadow-2xl max-w-xl w-full text-center p-10"
+      >
+        <img
+          src="img/Thriving Booking Logo.png"
+          alt="Thriving Booking Logo"
+          class="mx-auto h-24 mb-6"
+        />
+        <h2 class="text-3xl font-display font-bold text-darkNavy mb-4">
+          Thank you for your enquiry
+        </h2>
+        <p class="text-base text-darkNavy/75">We will be in touch soon.</p>
+      </div>
+    </div>
+    <iframe
+      id="formspreeFrame"
+      name="formspreeFrame"
+      class="hidden"
+      style="display: none"
+      aria-hidden="true"
+    ></iframe>
+
+    <div
+      id="toast"
+      class="fixed bottom-32 right-5 bg-green-600 text-white px-6 py-3 rounded shadow-xl z-50 flex items-center gap-3"
+    >
+      <i class="fa-solid fa-circle-check"></i>
+      <span>Thank you for your enquiry, we will be in touch soon.</span>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- JAVASCRIPT — External file (loaded last, after DOM is ready) -->
+    <!-- ============================================================ -->
+    <script src="script.js" defer></script>
+  </body>
+</html>
